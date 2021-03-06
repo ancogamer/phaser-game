@@ -5,4 +5,4 @@ RUN go mod download
 
 RUN go build -o app main.go
 
-ENTRYPOINT [ "app" ]
+ENTRYPOINT [ "app/app" ]
