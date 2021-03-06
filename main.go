@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"fmt"
 	"log"
 	"os"
 
@@ -12,6 +13,8 @@ func main() {
 	app := fiber.New()
 
 	app.Static("/", "/")
+
+	fmt.Println(os.Getenv("$PORT"))
 
 	log.Fatal(app.Listen(os.Getenv("$PORT")))
 }
