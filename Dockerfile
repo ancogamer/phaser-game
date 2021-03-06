@@ -4,5 +4,6 @@ COPY . .
 RUN go mod download
 
 RUN go build -o app main.go
+ENV PORT=$PORT
+CMD ["/app/app"]
 
-ENTRYPOINT [ "app/app" ]

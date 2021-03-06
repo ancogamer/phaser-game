@@ -14,7 +14,7 @@ func main() {
 
 	app.Static("/", "/")
 
-	fmt.Println(os.Getenv("$PORT"))
+	fmt.Println(os.Getenv("PORT"))
 
-	log.Fatal(app.Listen(os.Getenv("$PORT")))
+	log.Fatal(app.Listen(os.Getenv("PORT")))
 }
