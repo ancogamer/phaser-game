@@ -16,5 +16,5 @@ func main() {
 
 	fmt.Println(os.Getenv("PORT"))
 
-	log.Fatal(app.Listen(os.Getenv("PORT")))
+	log.Fatal(app.Listen(":" + os.Getenv("PORT")))
 }
