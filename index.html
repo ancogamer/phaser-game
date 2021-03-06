@@ -92,7 +92,7 @@ function create(){
 
 
     // controle
-    cursors= this.input.keyboard.createCursorKeys();
+    cursors = this.input.keyboard.createCursorKeys();
 
 
     // Pontos
@@ -101,6 +101,7 @@ function create(){
         repeat: 11,
         setXY:{x:12,y:0,stepX:70}
     });
+
     this.physics.add.collider(stars,platforms);
 
     stars.children.iterate(function(child){
@@ -134,6 +135,7 @@ function hitBomb(player,bomb){
     player.setTint(0xff0000);
     player.anims.play('turn');
     gameOver = true;
+    alert("You Lose")
 }
 
 function collectStar(player,star){
@@ -152,7 +154,6 @@ function collectStar(player,star){
         bomb.setBounce(1);
         bomb.setCollideWorldBounds(true);
         bomb.setVelocity(Phaser.Math.Between(-200,200),20);
-    
     }
 }
 
@@ -168,7 +169,6 @@ function update(){
         player.setVelocityX(0);
         player.anims.play('turn',true);
     }
-
     if (cursors.up.isDown &&player.body.touching.down){
         player.setVelocityY(-800);
     }
