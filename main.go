@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"log"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -12,5 +13,5 @@ func main() {
 
 	app.Static("/", "/")
 
-	log.Fatal(app.Listen(":8080"))
+	log.Fatal(app.Listen(os.Getenv("$PORT")))
 }
